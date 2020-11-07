@@ -1,0 +1,2 @@
+update t1 set id=id+1;
+update t1 set id=id+1;

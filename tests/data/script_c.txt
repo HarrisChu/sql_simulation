@@ -1,0 +1,3 @@
+start transaction;
+select * from t1;
+commit;

@@ -3,10 +3,11 @@ from pathlib import Path
 
 from sqlalchemy import create_engine
 from sqlalchemy.orm import scoped_session, sessionmaker
+from sqlalchemy.exc import OperationalError
 
 from sql_simulation.statement import StatementFactory, Statement
 from sql_simulation.utils import Generator
-from sql_simulation.logger import logger
+from sql_simulation.config import Config
 
 
 class Controller(object):
@@ -16,7 +17,18 @@ class Controller(object):
         self.output = output
         self.statement_factories = []
         self.parse_class = parse_class or Parser
-        self.engine = create_engine('mysql+pymysql://root@192.168.90.67:4000/harris?charset=utf8', pool_size=1)
+        uri = '{user}:{password}@{host}:{port}/{db}'.format(user=Config.TIDB_USER,
+                                                            password=Config.TIDB_PASSWORD,
+                                                            host=Config.TIDB_HOST,
+                                                            port=Config.TIDB_PORT,
+                                                            db=Config.TIDB_DATABASE)
+
+        self.engine = create_engine('mysql+pymysql://{}?charset=utf8'.format(uri), pool_size=1, pool_timeout=10)
+        try:
+            self.engine.execute('show tables;')
+        except OperationalError as e:
+            raise e
+
         self.generator = Generator()
         self.session_list = []
 
@@ -44,7 +56,10 @@ class Controller(object):
                 fl.write('\n')
                 # 防止上个组合有未提交，占锁的情况
                 for session in self.session_list:
-                    session.commit()
+                    try:
+                        session.commit()
+                    except:
+                        session.rollback()
 
 
 class Parser(object):

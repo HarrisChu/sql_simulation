@@ -9,13 +9,15 @@ class Statement(object):
         self.label = label
 
     def execute(self):
-        logger.info('[execute]-[{}]-[{}]'.format(self.label, self.value))
+        state_info = []
+        state_info.append('[{}]-[{}]'.format(self.label, self.value))
         try:
             r = self.session.execute(self.value)
             if r and r.returns_rows:
-                logger.info(r.fetchall())
+                state_info.append(str(r.fetchall()))
         except Exception as e:
-            logger.info(e)
+            state_info.append(str(e))
+        return state_info
 
     def __repr__(self):
         return '<Statement ({})>'.format(self.label)
@@ -26,8 +28,10 @@ class StatementFactory(object):
         self.factory = factory
 
     def execute(self):
-        logger.info('-' * 50)
+        factory_info = []
+        factory_info.append('-' * 50)
 
         for statement in self.factory:
             assert isinstance(statement, Statement)
-            statement.execute()
+            factory_info.extend(statement.execute())
+        return factory_info

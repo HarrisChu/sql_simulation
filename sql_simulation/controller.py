@@ -10,7 +10,10 @@ from sql_simulation.logger import logger
 
 
 class Controller(object):
-    def __init__(self, parse_class=None):
+    def __init__(self, parse_class=None, output=None):
+        if output is None:
+            output = 'output.log'
+        self.output = output
         self.statement_factories = []
         self.parse_class = parse_class or Parser
         self.engine = create_engine('mysql+pymysql://root@192.168.90.67:4000/harris?charset=utf8', pool_size=1)
@@ -30,13 +33,18 @@ class Controller(object):
 
     def run(self):
         result_list = self.generator.generate()
-        logger.info('共有 {} 种组合'.format(len(result_list)))
-        for result in result_list:
-            statement_factory = StatementFactory(result)
-            statement_factory.execute()
-            # 防止上个组合有未提交，占锁的情况
-            for session in self.session_list:
-                session.commit()
+        with open(self.output, 'w') as fl:
+            fl.write('共有 {} 种组合'.format(len(result_list)))
+            fl.write('\n')
+
+            for result in result_list:
+                statement_factory = StatementFactory(result)
+                factory_info = statement_factory.execute()
+                fl.write('\n'.join(factory_info))
+                fl.write('\n')
+                # 防止上个组合有未提交，占锁的情况
+                for session in self.session_list:
+                    session.commit()
 
 
 class Parser(object):

@@ -8,6 +8,7 @@ from sqlalchemy.exc import OperationalError
 from sql_simulation.statement import StatementFactory, Statement
 from sql_simulation.utils import Generator
 from sql_simulation.config import Config
+from sql_simulation.logger import logger
 
 
 class Controller(object):
@@ -45,15 +46,24 @@ class Controller(object):
 
     def run(self):
         result_list = self.generator.generate()
+        length = len(result_list)
         with open(self.output, 'w') as fl:
-            fl.write('共有 {} 种组合'.format(len(result_list)))
+            fl.write('共有 {} 种组合'.format(length))
+            logger.info('共有 {} 种组合'.format(length))
             fl.write('\n')
 
+            index = 0
             for result in result_list:
+                index += 1
+                fl.write('-' * 20 + '第{}/{}个组合'.format(index, length) + '-' * 20)
+                fl.write('\n')
                 statement_factory = StatementFactory(result)
                 factory_info = statement_factory.execute()
                 fl.write('\n'.join(factory_info))
                 fl.write('\n')
+                if index % 10 == 0:
+                    logger.info('执行到第{}个组合'.format(index))
+                    fl.flush()
                 # 防止上个组合有未提交，占锁的情况
                 for session in self.session_list:
                     try:

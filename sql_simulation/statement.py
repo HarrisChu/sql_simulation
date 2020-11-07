@@ -29,7 +29,6 @@ class StatementFactory(object):
 
     def execute(self):
         factory_info = []
-        factory_info.append('-' * 50)
 
         for statement in self.factory:
             assert isinstance(statement, Statement)

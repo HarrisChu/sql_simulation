@@ -1,0 +1,975 @@
+共有 70 种组合
+--------------------第1/70个组合--------------------
+[script_b.txt]-[start transaction;]
+[script_b.txt]-[select * from t1;]
+[(1049,)]
+[script_b.txt]-[update t1 set id=id+1;]
+[script_b.txt]-[commit;]
+[script_a.txt]-[start transaction;]
+[script_a.txt]-[select * from t1;]
+[(1050,)]
+[script_a.txt]-[update t1 set id=id+1;]
+[script_a.txt]-[commit;]
+--------------------第2/70个组合--------------------
+[script_b.txt]-[start transaction;]
+[script_b.txt]-[select * from t1;]
+[(1051,)]
+[script_b.txt]-[update t1 set id=id+1;]
+[script_a.txt]-[start transaction;]
+[script_b.txt]-[commit;]
+[script_a.txt]-[select * from t1;]
+[(1051,)]
+[script_a.txt]-[update t1 set id=id+1;]
+[script_a.txt]-[commit;]
+(pymysql.err.OperationalError) (9007, 'Write conflict, txnStartTS=420675211675303937, conflictStartTS=420675211649089538, conflictCommitTS=420675211675303938, key={tableID=94, handle=1} primary={tableID=94, handle=1} [try again later]')
+[SQL: commit;]
+(Background on this error at: http://sqlalche.me/e/13/e3q8)
+--------------------第3/70个组合--------------------
+[script_b.txt]-[start transaction;]
+[script_b.txt]-[select * from t1;]
+[(1052,)]
+[script_b.txt]-[update t1 set id=id+1;]
+[script_a.txt]-[start transaction;]
+[script_a.txt]-[select * from t1;]
+[(1052,)]
+[script_b.txt]-[commit;]
+[script_a.txt]-[update t1 set id=id+1;]
+[script_a.txt]-[commit;]
+(pymysql.err.OperationalError) (9007, 'Write conflict, txnStartTS=420675211714625540, conflictStartTS=420675211701518337, conflictCommitTS=420675211727732737, key={tableID=94, handle=1} primary={tableID=94, handle=1} [try again later]')
+[SQL: commit;]
+(Background on this error at: http://sqlalche.me/e/13/e3q8)
+--------------------第4/70个组合--------------------
+[script_b.txt]-[start transaction;]
+[script_b.txt]-[select * from t1;]
+[(1053,)]
+[script_b.txt]-[update t1 set id=id+1;]
+[script_a.txt]-[start transaction;]
+[script_a.txt]-[select * from t1;]
+[(1053,)]
+[script_a.txt]-[update t1 set id=id+1;]
+[script_b.txt]-[commit;]
+[script_a.txt]-[commit;]
+(pymysql.err.OperationalError) (9007, 'Write conflict, txnStartTS=420675211753947140, conflictStartTS=420675211740839940, conflictCommitTS=420675211767054337, key={tableID=94, handle=1} primary={tableID=94, handle=1} [try again later]')
+[SQL: commit;]
+(Background on this error at: http://sqlalche.me/e/13/e3q8)
+--------------------第5/70个组合--------------------
+[script_b.txt]-[start transaction;]
+[script_b.txt]-[select * from t1;]
+[(1054,)]
+[script_b.txt]-[update t1 set id=id+1;]
+[script_a.txt]-[start transaction;]
+[script_a.txt]-[select * from t1;]
+[(1054,)]
+[script_a.txt]-[update t1 set id=id+1;]
+[script_a.txt]-[commit;]
+[script_b.txt]-[commit;]
+(pymysql.err.OperationalError) (9007, 'Write conflict, txnStartTS=420675211780161541, conflictStartTS=420675211806375938, conflictCommitTS=420675211806375939, key={tableID=94, handle=1} primary={tableID=94, handle=1} [try again later]')
+[SQL: commit;]
+(Background on this error at: http://sqlalche.me/e/13/e3q8)
+--------------------第6/70个组合--------------------
+[script_b.txt]-[start transaction;]
+[script_b.txt]-[select * from t1;]
+[(1055,)]
+[script_a.txt]-[start transaction;]
+[script_b.txt]-[update t1 set id=id+1;]
+[script_b.txt]-[commit;]
+[script_a.txt]-[select * from t1;]
+[(1055,)]
+[script_a.txt]-[update t1 set id=id+1;]
+[script_a.txt]-[commit;]
+(pymysql.err.OperationalError) (9007, 'Write conflict, txnStartTS=420675211845697538, conflictStartTS=420675211819483141, conflictCommitTS=420675211845697539, key={tableID=94, handle=1} primary={tableID=94, handle=1} [try again later]')
+[SQL: commit;]
+(Background on this error at: http://sqlalche.me/e/13/e3q8)
+--------------------第7/70个组合--------------------
+[script_b.txt]-[start transaction;]
+[script_b.txt]-[select * from t1;]
+[(1056,)]
+[script_a.txt]-[start transaction;]
+[script_b.txt]-[update t1 set id=id+1;]
+[script_a.txt]-[select * from t1;]
+[(1056,)]
+[script_b.txt]-[commit;]
+[script_a.txt]-[update t1 set id=id+1;]
+[script_a.txt]-[commit;]
+(pymysql.err.OperationalError) (9007, 'Write conflict, txnStartTS=420675211898126337, conflictStartTS=420675211871911938, conflictCommitTS=420675211898126338, key={tableID=94, handle=1} primary={tableID=94, handle=1} [try again later]')
+[SQL: commit;]
+(Background on this error at: http://sqlalche.me/e/13/e3q8)
+--------------------第8/70个组合--------------------
+[script_b.txt]-[start transaction;]
+[script_b.txt]-[select * from t1;]
+[(1057,)]
+[script_a.txt]-[start transaction;]
+[script_b.txt]-[update t1 set id=id+1;]
+[script_a.txt]-[select * from t1;]
+[(1057,)]
+[script_a.txt]-[update t1 set id=id+1;]
+[script_b.txt]-[commit;]
+[script_a.txt]-[commit;]
+(pymysql.err.OperationalError) (9007, 'Write conflict, txnStartTS=420675211937447938, conflictStartTS=420675211924340737, conflictCommitTS=420675211950555137, key={tableID=94, handle=1} primary={tableID=94, handle=1} [try again later]')
+[SQL: commit;]
+(Background on this error at: http://sqlalche.me/e/13/e3q8)
+--------------------第9/70个组合--------------------
+[script_b.txt]-[start transaction;]
+[script_b.txt]-[select * from t1;]
+[(1058,)]
+[script_a.txt]-[start transaction;]
+[script_b.txt]-[update t1 set id=id+1;]
+[script_a.txt]-[select * from t1;]
+[(1058,)]
+[script_a.txt]-[update t1 set id=id+1;]
+[script_a.txt]-[commit;]
+[script_b.txt]-[commit;]
+(pymysql.err.OperationalError) (9007, 'Write conflict, txnStartTS=420675211963662338, conflictStartTS=420675211976769539, conflictCommitTS=420675211989876737, key={tableID=94, handle=1} primary={tableID=94, handle=1} [try again later]')
+[SQL: commit;]
+(Background on this error at: http://sqlalche.me/e/13/e3q8)
+--------------------第10/70个组合--------------------
+[script_b.txt]-[start transaction;]
+[script_b.txt]-[select * from t1;]
+[(1059,)]
+[script_a.txt]-[start transaction;]
+[script_a.txt]-[select * from t1;]
+[(1059,)]
+[script_b.txt]-[update t1 set id=id+1;]
+[script_b.txt]-[commit;]
+[script_a.txt]-[update t1 set id=id+1;]
+[script_a.txt]-[commit;]
+(pymysql.err.OperationalError) (9007, 'Write conflict, txnStartTS=420675212042305541, conflictStartTS=420675212016091138, conflictCommitTS=420675212055412737, key={tableID=94, handle=1} primary={tableID=94, handle=1} [try again later]')
+[SQL: commit;]
+(Background on this error at: http://sqlalche.me/e/13/e3q8)
+--------------------第11/70个组合--------------------
+[script_b.txt]-[start transaction;]
+[script_b.txt]-[select * from t1;]
+[(1060,)]
+[script_a.txt]-[start transaction;]
+[script_a.txt]-[select * from t1;]
+[(1060,)]
+[script_b.txt]-[update t1 set id=id+1;]
+[script_a.txt]-[update t1 set id=id+1;]
+[script_b.txt]-[commit;]
+[script_a.txt]-[commit;]
+(pymysql.err.OperationalError) (9007, 'Write conflict, txnStartTS=420675212094734338, conflictStartTS=420675212068519946, conflictCommitTS=420675212107841537, key={tableID=94, handle=1} primary={tableID=94, handle=1} [try again later]')
+[SQL: commit;]
+(Background on this error at: http://sqlalche.me/e/13/e3q8)
+--------------------第12/70个组合--------------------
+[script_b.txt]-[start transaction;]
+[script_b.txt]-[select * from t1;]
+[(1061,)]
+[script_a.txt]-[start transaction;]
+[script_a.txt]-[select * from t1;]
+[(1061,)]
+[script_b.txt]-[update t1 set id=id+1;]
+[script_a.txt]-[update t1 set id=id+1;]
+[script_a.txt]-[commit;]
+[script_b.txt]-[commit;]
+(pymysql.err.OperationalError) (9007, 'Write conflict, txnStartTS=420675212120948739, conflictStartTS=420675212147163137, conflictCommitTS=420675212160270337, key={tableID=94, handle=1} primary={tableID=94, handle=1} [try again later]')
+[SQL: commit;]
+(Background on this error at: http://sqlalche.me/e/13/e3q8)
+--------------------第13/70个组合--------------------
+[script_b.txt]-[start transaction;]
+[script_b.txt]-[select * from t1;]
+[(1062,)]
+[script_a.txt]-[start transaction;]
+[script_a.txt]-[select * from t1;]
+[(1062,)]
+[script_a.txt]-[update t1 set id=id+1;]
+[script_b.txt]-[update t1 set id=id+1;]
+[script_b.txt]-[commit;]
+[script_a.txt]-[commit;]
+(pymysql.err.OperationalError) (9007, 'Write conflict, txnStartTS=420675212186484740, conflictStartTS=420675212173377537, conflictCommitTS=420675212199591937, key={tableID=94, handle=1} primary={tableID=94, handle=1} [try again later]')
+[SQL: commit;]
+(Background on this error at: http://sqlalche.me/e/13/e3q8)
+--------------------第14/70个组合--------------------
+[script_b.txt]-[start transaction;]
+[script_b.txt]-[select * from t1;]
+[(1063,)]
+[script_a.txt]-[start transaction;]
+[script_a.txt]-[select * from t1;]
+[(1063,)]
+[script_a.txt]-[update t1 set id=id+1;]
+[script_b.txt]-[update t1 set id=id+1;]
+[script_a.txt]-[commit;]
+[script_b.txt]-[commit;]
+(pymysql.err.OperationalError) (9007, 'Write conflict, txnStartTS=420675212212699139, conflictStartTS=420675212225806340, conflictCommitTS=420675212238913537, key={tableID=94, handle=1} primary={tableID=94, handle=1} [try again later]')
+[SQL: commit;]
+(Background on this error at: http://sqlalche.me/e/13/e3q8)
+--------------------第15/70个组合--------------------
+[script_b.txt]-[start transaction;]
+[script_b.txt]-[select * from t1;]
+[(1064,)]
+[script_a.txt]-[start transaction;]
+[script_a.txt]-[select * from t1;]
+[(1064,)]
+[script_a.txt]-[update t1 set id=id+1;]
+[script_a.txt]-[commit;]
+[script_b.txt]-[update t1 set id=id+1;]
+[script_b.txt]-[commit;]
+(pymysql.err.OperationalError) (9007, 'Write conflict, txnStartTS=420675212252020740, conflictStartTS=420675212265127941, conflictCommitTS=420675212278235137, key={tableID=94, handle=1} primary={tableID=94, handle=1} [try again later]')
+[SQL: commit;]
+(Background on this error at: http://sqlalche.me/e/13/e3q8)
+--------------------第16/70个组合--------------------
+[script_b.txt]-[start transaction;]
+[script_a.txt]-[start transaction;]
+[script_b.txt]-[select * from t1;]
+[(1065,)]
+[script_b.txt]-[update t1 set id=id+1;]
+[script_b.txt]-[commit;]
+[script_a.txt]-[select * from t1;]
+[(1065,)]
+[script_a.txt]-[update t1 set id=id+1;]
+[script_a.txt]-[commit;]
+(pymysql.err.OperationalError) (9007, 'Write conflict, txnStartTS=420675212304449543, conflictStartTS=420675212291342341, conflictCommitTS=420675212317556737, key={tableID=94, handle=1} primary={tableID=94, handle=1} [try again later]')
+[SQL: commit;]
+(Background on this error at: http://sqlalche.me/e/13/e3q8)
+--------------------第17/70个组合--------------------
+[script_b.txt]-[start transaction;]
+[script_a.txt]-[start transaction;]
+[script_b.txt]-[select * from t1;]
+[(1066,)]
+[script_b.txt]-[update t1 set id=id+1;]
+[script_a.txt]-[select * from t1;]
+[(1066,)]
+[script_b.txt]-[commit;]
+[script_a.txt]-[update t1 set id=id+1;]
+[script_a.txt]-[commit;]
+(pymysql.err.OperationalError) (9007, 'Write conflict, txnStartTS=420675212369985538, conflictStartTS=420675212343771137, conflictCommitTS=420675212383092737, key={tableID=94, handle=1} primary={tableID=94, handle=1} [try again later]')
+[SQL: commit;]
+(Background on this error at: http://sqlalche.me/e/13/e3q8)
+--------------------第18/70个组合--------------------
+[script_b.txt]-[start transaction;]
+[script_a.txt]-[start transaction;]
+[script_b.txt]-[select * from t1;]
+[(1067,)]
+[script_b.txt]-[update t1 set id=id+1;]
+[script_a.txt]-[select * from t1;]
+[(1067,)]
+[script_a.txt]-[update t1 set id=id+1;]
+[script_b.txt]-[commit;]
+[script_a.txt]-[commit;]
+(pymysql.err.OperationalError) (9007, 'Write conflict, txnStartTS=420675212422414339, conflictStartTS=420675212396199940, conflictCommitTS=420675212435521537, key={tableID=94, handle=1} primary={tableID=94, handle=1} [try again later]')
+[SQL: commit;]
+(Background on this error at: http://sqlalche.me/e/13/e3q8)
+--------------------第19/70个组合--------------------
+[script_b.txt]-[start transaction;]
+[script_a.txt]-[start transaction;]
+[script_b.txt]-[select * from t1;]
+[(1068,)]
+[script_b.txt]-[update t1 set id=id+1;]
+[script_a.txt]-[select * from t1;]
+[(1068,)]
+[script_a.txt]-[update t1 set id=id+1;]
+[script_a.txt]-[commit;]
+[script_b.txt]-[commit;]
+(pymysql.err.OperationalError) (9007, 'Write conflict, txnStartTS=420675212448890886, conflictStartTS=420675212461735940, conflictCommitTS=420675212474843137, key={tableID=94, handle=1} primary={tableID=94, handle=1} [try again later]')
+[SQL: commit;]
+(Background on this error at: http://sqlalche.me/e/13/e3q8)
+--------------------第20/70个组合--------------------
+[script_b.txt]-[start transaction;]
+[script_a.txt]-[start transaction;]
+[script_b.txt]-[select * from t1;]
+[(1069,)]
+[script_a.txt]-[select * from t1;]
+[(1069,)]
+[script_b.txt]-[update t1 set id=id+1;]
+[script_b.txt]-[commit;]
+[script_a.txt]-[update t1 set id=id+1;]
+[script_a.txt]-[commit;]
+(pymysql.err.OperationalError) (9007, 'Write conflict, txnStartTS=420675212514164737, conflictStartTS=420675212487950341, conflictCommitTS=420675212514164738, key={tableID=94, handle=1} primary={tableID=94, handle=1} [try again later]')
+[SQL: commit;]
+(Background on this error at: http://sqlalche.me/e/13/e3q8)
+--------------------第21/70个组合--------------------
+[script_b.txt]-[start transaction;]
+[script_a.txt]-[start transaction;]
+[script_b.txt]-[select * from t1;]
+[(1070,)]
+[script_a.txt]-[select * from t1;]
+[(1070,)]
+[script_b.txt]-[update t1 set id=id+1;]
+[script_a.txt]-[update t1 set id=id+1;]
+[script_b.txt]-[commit;]
+[script_a.txt]-[commit;]
+(pymysql.err.OperationalError) (9007, 'Write conflict, txnStartTS=420675212553486338, conflictStartTS=420675212540379138, conflictCommitTS=420675212566593537, key={tableID=94, handle=1} primary={tableID=94, handle=1} [try again later]')
+[SQL: commit;]
+(Background on this error at: http://sqlalche.me/e/13/e3q8)
+--------------------第22/70个组合--------------------
+[script_b.txt]-[start transaction;]
+[script_a.txt]-[start transaction;]
+[script_b.txt]-[select * from t1;]
+[(1071,)]
+[script_a.txt]-[select * from t1;]
+[(1071,)]
+[script_b.txt]-[update t1 set id=id+1;]
+[script_a.txt]-[update t1 set id=id+1;]
+[script_a.txt]-[commit;]
+[script_b.txt]-[commit;]
+(pymysql.err.OperationalError) (9007, 'Write conflict, txnStartTS=420675212579700738, conflictStartTS=420675212592807940, conflictCommitTS=420675212605915137, key={tableID=94, handle=1} primary={tableID=94, handle=1} [try again later]')
+[SQL: commit;]
+(Background on this error at: http://sqlalche.me/e/13/e3q8)
+--------------------第23/70个组合--------------------
+[script_b.txt]-[start transaction;]
+[script_a.txt]-[start transaction;]
+[script_b.txt]-[select * from t1;]
+[(1072,)]
+[script_a.txt]-[select * from t1;]
+[(1072,)]
+[script_a.txt]-[update t1 set id=id+1;]
+[script_b.txt]-[update t1 set id=id+1;]
+[script_b.txt]-[commit;]
+[script_a.txt]-[commit;]
+(pymysql.err.OperationalError) (9007, 'Write conflict, txnStartTS=420675212632129541, conflictStartTS=420675212619022339, conflictCommitTS=420675212645236737, key={tableID=94, handle=1} primary={tableID=94, handle=1} [try again later]')
+[SQL: commit;]
+(Background on this error at: http://sqlalche.me/e/13/e3q8)
+--------------------第24/70个组合--------------------
+[script_b.txt]-[start transaction;]
+[script_a.txt]-[start transaction;]
+[script_b.txt]-[select * from t1;]
+[(1073,)]
+[script_a.txt]-[select * from t1;]
+[(1073,)]
+[script_a.txt]-[update t1 set id=id+1;]
+[script_b.txt]-[update t1 set id=id+1;]
+[script_a.txt]-[commit;]
+[script_b.txt]-[commit;]
+(pymysql.err.OperationalError) (9007, 'Write conflict, txnStartTS=420675212697665537, conflictStartTS=420675212710772739, conflictCommitTS=420675212723879937, key={tableID=94, handle=1} primary={tableID=94, handle=1} [try again later]')
+[SQL: commit;]
+(Background on this error at: http://sqlalche.me/e/13/e3q8)
+--------------------第25/70个组合--------------------
+[script_b.txt]-[start transaction;]
+[script_a.txt]-[start transaction;]
+[script_b.txt]-[select * from t1;]
+[(1074,)]
+[script_a.txt]-[select * from t1;]
+[(1074,)]
+[script_a.txt]-[update t1 set id=id+1;]
+[script_a.txt]-[commit;]
+[script_b.txt]-[update t1 set id=id+1;]
+[script_b.txt]-[commit;]
+(pymysql.err.OperationalError) (9007, 'Write conflict, txnStartTS=420675212736987140, conflictStartTS=420675212750094340, conflictCommitTS=420675212763201537, key={tableID=94, handle=1} primary={tableID=94, handle=1} [try again later]')
+[SQL: commit;]
+(Background on this error at: http://sqlalche.me/e/13/e3q8)
+--------------------第26/70个组合--------------------
+[script_b.txt]-[start transaction;]
+[script_a.txt]-[start transaction;]
+[script_a.txt]-[select * from t1;]
+[(1075,)]
+[script_b.txt]-[select * from t1;]
+[(1075,)]
+[script_b.txt]-[update t1 set id=id+1;]
+[script_b.txt]-[commit;]
+[script_a.txt]-[update t1 set id=id+1;]
+[script_a.txt]-[commit;]
+(pymysql.err.OperationalError) (9007, 'Write conflict, txnStartTS=420675212802523138, conflictStartTS=420675212789415937, conflictCommitTS=420675212815630337, key={tableID=94, handle=1} primary={tableID=94, handle=1} [try again later]')
+[SQL: commit;]
+(Background on this error at: http://sqlalche.me/e/13/e3q8)
+--------------------第27/70个组合--------------------
+[script_b.txt]-[start transaction;]
+[script_a.txt]-[start transaction;]
+[script_a.txt]-[select * from t1;]
+[(1076,)]
+[script_b.txt]-[select * from t1;]
+[(1076,)]
+[script_b.txt]-[update t1 set id=id+1;]
+[script_a.txt]-[update t1 set id=id+1;]
+[script_b.txt]-[commit;]
+[script_a.txt]-[commit;]
+(pymysql.err.OperationalError) (9007, 'Write conflict, txnStartTS=420675212841844739, conflictStartTS=420675212828737539, conflictCommitTS=420675212854951942, key={tableID=94, handle=1} primary={tableID=94, handle=1} [try again later]')
+[SQL: commit;]
+(Background on this error at: http://sqlalche.me/e/13/e3q8)
+--------------------第28/70个组合--------------------
+[script_b.txt]-[start transaction;]
+[script_a.txt]-[start transaction;]
+[script_a.txt]-[select * from t1;]
+[(1077,)]
+[script_b.txt]-[select * from t1;]
+[(1077,)]
+[script_b.txt]-[update t1 set id=id+1;]
+[script_a.txt]-[update t1 set id=id+1;]
+[script_a.txt]-[commit;]
+[script_b.txt]-[commit;]
+(pymysql.err.OperationalError) (9007, 'Write conflict, txnStartTS=420675212868059140, conflictStartTS=420675212881166340, conflictCommitTS=420675212894273537, key={tableID=94, handle=1} primary={tableID=94, handle=1} [try again later]')
+[SQL: commit;]
+(Background on this error at: http://sqlalche.me/e/13/e3q8)
+--------------------第29/70个组合--------------------
+[script_b.txt]-[start transaction;]
+[script_a.txt]-[start transaction;]
+[script_a.txt]-[select * from t1;]
+[(1078,)]
+[script_b.txt]-[select * from t1;]
+[(1078,)]
+[script_a.txt]-[update t1 set id=id+1;]
+[script_b.txt]-[update t1 set id=id+1;]
+[script_b.txt]-[commit;]
+[script_a.txt]-[commit;]
+(pymysql.err.OperationalError) (9007, 'Write conflict, txnStartTS=420675212947488769, conflictStartTS=420675212920487938, conflictCommitTS=420675212959809537, key={tableID=94, handle=1} primary={tableID=94, handle=1} [try again later]')
+[SQL: commit;]
+(Background on this error at: http://sqlalche.me/e/13/e3q8)
+--------------------第30/70个组合--------------------
+[script_b.txt]-[start transaction;]
+[script_a.txt]-[start transaction;]
+[script_a.txt]-[select * from t1;]
+[(1079,)]
+[script_b.txt]-[select * from t1;]
+[(1079,)]
+[script_a.txt]-[update t1 set id=id+1;]
+[script_b.txt]-[update t1 set id=id+1;]
+[script_a.txt]-[commit;]
+[script_b.txt]-[commit;]
+(pymysql.err.OperationalError) (9007, 'Write conflict, txnStartTS=420675212972916740, conflictStartTS=420675212986023939, conflictCommitTS=420675212999131137, key={tableID=94, handle=1} primary={tableID=94, handle=1} [try again later]')
+[SQL: commit;]
+(Background on this error at: http://sqlalche.me/e/13/e3q8)
+--------------------第31/70个组合--------------------
+[script_b.txt]-[start transaction;]
+[script_a.txt]-[start transaction;]
+[script_a.txt]-[select * from t1;]
+[(1080,)]
+[script_b.txt]-[select * from t1;]
+[(1080,)]
+[script_a.txt]-[update t1 set id=id+1;]
+[script_a.txt]-[commit;]
+[script_b.txt]-[update t1 set id=id+1;]
+[script_b.txt]-[commit;]
+(pymysql.err.OperationalError) (9007, 'Write conflict, txnStartTS=420675213012238341, conflictStartTS=420675213025345540, conflictCommitTS=420675213038452737, key={tableID=94, handle=1} primary={tableID=94, handle=1} [try again later]')
+[SQL: commit;]
+(Background on this error at: http://sqlalche.me/e/13/e3q8)
+--------------------第32/70个组合--------------------
+[script_b.txt]-[start transaction;]
+[script_a.txt]-[start transaction;]
+[script_a.txt]-[select * from t1;]
+[(1081,)]
+[script_a.txt]-[update t1 set id=id+1;]
+[script_b.txt]-[select * from t1;]
+[(1081,)]
+[script_b.txt]-[update t1 set id=id+1;]
+[script_b.txt]-[commit;]
+[script_a.txt]-[commit;]
+(pymysql.err.OperationalError) (9007, 'Write conflict, txnStartTS=420675213077774337, conflictStartTS=420675213064667137, conflictCommitTS=420675213090881537, key={tableID=94, handle=1} primary={tableID=94, handle=1} [try again later]')
+[SQL: commit;]
+(Background on this error at: http://sqlalche.me/e/13/e3q8)
+--------------------第33/70个组合--------------------
+[script_b.txt]-[start transaction;]
+[script_a.txt]-[start transaction;]
+[script_a.txt]-[select * from t1;]
+[(1082,)]
+[script_a.txt]-[update t1 set id=id+1;]
+[script_b.txt]-[select * from t1;]
+[(1082,)]
+[script_b.txt]-[update t1 set id=id+1;]
+[script_a.txt]-[commit;]
+[script_b.txt]-[commit;]
+(pymysql.err.OperationalError) (9007, 'Write conflict, txnStartTS=420675213103988738, conflictStartTS=420675213117095940, conflictCommitTS=420675213130203137, key={tableID=94, handle=1} primary={tableID=94, handle=1} [try again later]')
+[SQL: commit;]
+(Background on this error at: http://sqlalche.me/e/13/e3q8)
+--------------------第34/70个组合--------------------
+[script_b.txt]-[start transaction;]
+[script_a.txt]-[start transaction;]
+[script_a.txt]-[select * from t1;]
+[(1083,)]
+[script_a.txt]-[update t1 set id=id+1;]
+[script_b.txt]-[select * from t1;]
+[(1083,)]
+[script_a.txt]-[commit;]
+[script_b.txt]-[update t1 set id=id+1;]
+[script_b.txt]-[commit;]
+(pymysql.err.OperationalError) (9007, 'Write conflict, txnStartTS=420675213143310340, conflictStartTS=420675213169524738, conflictCommitTS=420675213182631937, key={tableID=94, handle=1} primary={tableID=94, handle=1} [try again later]')
+[SQL: commit;]
+(Background on this error at: http://sqlalche.me/e/13/e3q8)
+--------------------第35/70个组合--------------------
+[script_b.txt]-[start transaction;]
+[script_a.txt]-[start transaction;]
+[script_a.txt]-[select * from t1;]
+[(1084,)]
+[script_a.txt]-[update t1 set id=id+1;]
+[script_a.txt]-[commit;]
+[script_b.txt]-[select * from t1;]
+[(1084,)]
+[script_b.txt]-[update t1 set id=id+1;]
+[script_b.txt]-[commit;]
+(pymysql.err.OperationalError) (9007, 'Write conflict, txnStartTS=420675213208846337, conflictStartTS=420675213221953537, conflictCommitTS=420675213221953538, key={tableID=94, handle=1} primary={tableID=94, handle=1} [try again later]')
+[SQL: commit;]
+(Background on this error at: http://sqlalche.me/e/13/e3q8)
+--------------------第36/70个组合--------------------
+[script_a.txt]-[start transaction;]
+[script_b.txt]-[start transaction;]
+[script_b.txt]-[select * from t1;]
+[(1085,)]
+[script_b.txt]-[update t1 set id=id+1;]
+[script_b.txt]-[commit;]
+[script_a.txt]-[select * from t1;]
+[(1085,)]
+[script_a.txt]-[update t1 set id=id+1;]
+[script_a.txt]-[commit;]
+(pymysql.err.OperationalError) (9007, 'Write conflict, txnStartTS=420675213248167938, conflictStartTS=420675213261275139, conflictCommitTS=420675213274382337, key={tableID=94, handle=1} primary={tableID=94, handle=1} [try again later]')
+[SQL: commit;]
+(Background on this error at: http://sqlalche.me/e/13/e3q8)
+--------------------第37/70个组合--------------------
+[script_a.txt]-[start transaction;]
+[script_b.txt]-[start transaction;]
+[script_b.txt]-[select * from t1;]
+[(1086,)]
+[script_b.txt]-[update t1 set id=id+1;]
+[script_a.txt]-[select * from t1;]
+[(1086,)]
+[script_b.txt]-[commit;]
+[script_a.txt]-[update t1 set id=id+1;]
+[script_a.txt]-[commit;]
+(pymysql.err.OperationalError) (9007, 'Write conflict, txnStartTS=420675213287489541, conflictStartTS=420675213300596740, conflictCommitTS=420675213313703938, key={tableID=94, handle=1} primary={tableID=94, handle=1} [try again later]')
+[SQL: commit;]
+(Background on this error at: http://sqlalche.me/e/13/e3q8)
+--------------------第38/70个组合--------------------
+[script_a.txt]-[start transaction;]
+[script_b.txt]-[start transaction;]
+[script_b.txt]-[select * from t1;]
+[(1087,)]
+[script_b.txt]-[update t1 set id=id+1;]
+[script_a.txt]-[select * from t1;]
+[(1087,)]
+[script_a.txt]-[update t1 set id=id+1;]
+[script_b.txt]-[commit;]
+[script_a.txt]-[commit;]
+(pymysql.err.OperationalError) (9007, 'Write conflict, txnStartTS=420675213339918338, conflictStartTS=420675213353025539, conflictCommitTS=420675213366132737, key={tableID=94, handle=1} primary={tableID=94, handle=1} [try again later]')
+[SQL: commit;]
+(Background on this error at: http://sqlalche.me/e/13/e3q8)
+--------------------第39/70个组合--------------------
+[script_a.txt]-[start transaction;]
+[script_b.txt]-[start transaction;]
+[script_b.txt]-[select * from t1;]
+[(1088,)]
+[script_b.txt]-[update t1 set id=id+1;]
+[script_a.txt]-[select * from t1;]
+[(1088,)]
+[script_a.txt]-[update t1 set id=id+1;]
+[script_a.txt]-[commit;]
+[script_b.txt]-[commit;]
+(pymysql.err.OperationalError) (9007, 'Write conflict, txnStartTS=420675213392347139, conflictStartTS=420675213379239940, conflictCommitTS=420675213405716481, key={tableID=94, handle=1} primary={tableID=94, handle=1} [try again later]')
+[SQL: commit;]
+(Background on this error at: http://sqlalche.me/e/13/e3q8)
+--------------------第40/70个组合--------------------
+[script_a.txt]-[start transaction;]
+[script_b.txt]-[start transaction;]
+[script_b.txt]-[select * from t1;]
+[(1089,)]
+[script_a.txt]-[select * from t1;]
+[(1089,)]
+[script_b.txt]-[update t1 set id=id+1;]
+[script_b.txt]-[commit;]
+[script_a.txt]-[update t1 set id=id+1;]
+[script_a.txt]-[commit;]
+(pymysql.err.OperationalError) (9007, 'Write conflict, txnStartTS=420675213418561541, conflictStartTS=420675213431668740, conflictCommitTS=420675213444775937, key={tableID=94, handle=1} primary={tableID=94, handle=1} [try again later]')
+[SQL: commit;]
+(Background on this error at: http://sqlalche.me/e/13/e3q8)
+--------------------第41/70个组合--------------------
+[script_a.txt]-[start transaction;]
+[script_b.txt]-[start transaction;]
+[script_b.txt]-[select * from t1;]
+[(1090,)]
+[script_a.txt]-[select * from t1;]
+[(1090,)]
+[script_b.txt]-[update t1 set id=id+1;]
+[script_a.txt]-[update t1 set id=id+1;]
+[script_b.txt]-[commit;]
+[script_a.txt]-[commit;]
+(pymysql.err.OperationalError) (9007, 'Write conflict, txnStartTS=420675213470990340, conflictStartTS=420675213484097540, conflictCommitTS=420675213497204738, key={tableID=94, handle=1} primary={tableID=94, handle=1} [try again later]')
+[SQL: commit;]
+(Background on this error at: http://sqlalche.me/e/13/e3q8)
+--------------------第42/70个组合--------------------
+[script_a.txt]-[start transaction;]
+[script_b.txt]-[start transaction;]
+[script_b.txt]-[select * from t1;]
+[(1091,)]
+[script_a.txt]-[select * from t1;]
+[(1091,)]
+[script_b.txt]-[update t1 set id=id+1;]
+[script_a.txt]-[update t1 set id=id+1;]
+[script_a.txt]-[commit;]
+[script_b.txt]-[commit;]
+(pymysql.err.OperationalError) (9007, 'Write conflict, txnStartTS=420675213523419140, conflictStartTS=420675213510311940, conflictCommitTS=420675213536526337, key={tableID=94, handle=1} primary={tableID=94, handle=1} [try again later]')
+[SQL: commit;]
+(Background on this error at: http://sqlalche.me/e/13/e3q8)
+--------------------第43/70个组合--------------------
+[script_a.txt]-[start transaction;]
+[script_b.txt]-[start transaction;]
+[script_b.txt]-[select * from t1;]
+[(1092,)]
+[script_a.txt]-[select * from t1;]
+[(1092,)]
+[script_a.txt]-[update t1 set id=id+1;]
+[script_b.txt]-[update t1 set id=id+1;]
+[script_b.txt]-[commit;]
+[script_a.txt]-[commit;]
+(pymysql.err.OperationalError) (9007, 'Write conflict, txnStartTS=420675213562740737, conflictStartTS=420675213575847937, conflictCommitTS=420675213588955137, key={tableID=94, handle=1} primary={tableID=94, handle=1} [try again later]')
+[SQL: commit;]
+(Background on this error at: http://sqlalche.me/e/13/e3q8)
+--------------------第44/70个组合--------------------
+[script_a.txt]-[start transaction;]
+[script_b.txt]-[start transaction;]
+[script_b.txt]-[select * from t1;]
+[(1093,)]
+[script_a.txt]-[select * from t1;]
+[(1093,)]
+[script_a.txt]-[update t1 set id=id+1;]
+[script_b.txt]-[update t1 set id=id+1;]
+[script_a.txt]-[commit;]
+[script_b.txt]-[commit;]
+(pymysql.err.OperationalError) (9007, 'Write conflict, txnStartTS=420675213615169537, conflictStartTS=420675213602062337, conflictCommitTS=420675213628276737, key={tableID=94, handle=1} primary={tableID=94, handle=1} [try again later]')
+[SQL: commit;]
+(Background on this error at: http://sqlalche.me/e/13/e3q8)
+--------------------第45/70个组合--------------------
+[script_a.txt]-[start transaction;]
+[script_b.txt]-[start transaction;]
+[script_b.txt]-[select * from t1;]
+[(1094,)]
+[script_a.txt]-[select * from t1;]
+[(1094,)]
+[script_a.txt]-[update t1 set id=id+1;]
+[script_a.txt]-[commit;]
+[script_b.txt]-[update t1 set id=id+1;]
+[script_b.txt]-[commit;]
+(pymysql.err.OperationalError) (9007, 'Write conflict, txnStartTS=420675213654491138, conflictStartTS=420675213641383938, conflictCommitTS=420675213667598337, key={tableID=94, handle=1} primary={tableID=94, handle=1} [try again later]')
+[SQL: commit;]
+(Background on this error at: http://sqlalche.me/e/13/e3q8)
+--------------------第46/70个组合--------------------
+[script_a.txt]-[start transaction;]
+[script_b.txt]-[start transaction;]
+[script_a.txt]-[select * from t1;]
+[(1095,)]
+[script_b.txt]-[select * from t1;]
+[(1095,)]
+[script_b.txt]-[update t1 set id=id+1;]
+[script_b.txt]-[commit;]
+[script_a.txt]-[update t1 set id=id+1;]
+[script_a.txt]-[commit;]
+(pymysql.err.OperationalError) (9007, 'Write conflict, txnStartTS=420675213680705539, conflictStartTS=420675213693812739, conflictCommitTS=420675213706919937, key={tableID=94, handle=1} primary={tableID=94, handle=1} [try again later]')
+[SQL: commit;]
+(Background on this error at: http://sqlalche.me/e/13/e3q8)
+--------------------第47/70个组合--------------------
+[script_a.txt]-[start transaction;]
+[script_b.txt]-[start transaction;]
+[script_a.txt]-[select * from t1;]
+[(1096,)]
+[script_b.txt]-[select * from t1;]
+[(1096,)]
+[script_b.txt]-[update t1 set id=id+1;]
+[script_a.txt]-[update t1 set id=id+1;]
+[script_b.txt]-[commit;]
+[script_a.txt]-[commit;]
+(pymysql.err.OperationalError) (9007, 'Write conflict, txnStartTS=420675213733134338, conflictStartTS=420675213746241539, conflictCommitTS=420675213772455937, key={tableID=94, handle=1} primary={tableID=94, handle=1} [try again later]')
+[SQL: commit;]
+(Background on this error at: http://sqlalche.me/e/13/e3q8)
+--------------------第48/70个组合--------------------
+[script_a.txt]-[start transaction;]
+[script_b.txt]-[start transaction;]
+[script_a.txt]-[select * from t1;]
+[(1097,)]
+[script_b.txt]-[select * from t1;]
+[(1097,)]
+[script_b.txt]-[update t1 set id=id+1;]
+[script_a.txt]-[update t1 set id=id+1;]
+[script_a.txt]-[commit;]
+[script_b.txt]-[commit;]
+(pymysql.err.OperationalError) (9007, 'Write conflict, txnStartTS=420675213811777538, conflictStartTS=420675213785563140, conflictCommitTS=420675213824884737, key={tableID=94, handle=1} primary={tableID=94, handle=1} [try again later]')
+[SQL: commit;]
+(Background on this error at: http://sqlalche.me/e/13/e3q8)
+--------------------第49/70个组合--------------------
+[script_a.txt]-[start transaction;]
+[script_b.txt]-[start transaction;]
+[script_a.txt]-[select * from t1;]
+[(1098,)]
+[script_b.txt]-[select * from t1;]
+[(1098,)]
+[script_a.txt]-[update t1 set id=id+1;]
+[script_b.txt]-[update t1 set id=id+1;]
+[script_b.txt]-[commit;]
+[script_a.txt]-[commit;]
+(pymysql.err.OperationalError) (9007, 'Write conflict, txnStartTS=420675213837991942, conflictStartTS=420675213851099140, conflictCommitTS=420675213864206337, key={tableID=94, handle=1} primary={tableID=94, handle=1} [try again later]')
+[SQL: commit;]
+(Background on this error at: http://sqlalche.me/e/13/e3q8)
+--------------------第50/70个组合--------------------
+[script_a.txt]-[start transaction;]
+[script_b.txt]-[start transaction;]
+[script_a.txt]-[select * from t1;]
+[(1099,)]
+[script_b.txt]-[select * from t1;]
+[(1099,)]
+[script_a.txt]-[update t1 set id=id+1;]
+[script_b.txt]-[update t1 set id=id+1;]
+[script_a.txt]-[commit;]
+[script_b.txt]-[commit;]
+(pymysql.err.OperationalError) (9007, 'Write conflict, txnStartTS=420675213903527937, conflictStartTS=420675213890420737, conflictCommitTS=420675213916635137, key={tableID=94, handle=1} primary={tableID=94, handle=1} [try again later]')
+[SQL: commit;]
+(Background on this error at: http://sqlalche.me/e/13/e3q8)
+--------------------第51/70个组合--------------------
+[script_a.txt]-[start transaction;]
+[script_b.txt]-[start transaction;]
+[script_a.txt]-[select * from t1;]
+[(1100,)]
+[script_b.txt]-[select * from t1;]
+[(1100,)]
+[script_a.txt]-[update t1 set id=id+1;]
+[script_a.txt]-[commit;]
+[script_b.txt]-[update t1 set id=id+1;]
+[script_b.txt]-[commit;]
+(pymysql.err.OperationalError) (9007, 'Write conflict, txnStartTS=420675213942849538, conflictStartTS=420675213929742338, conflictCommitTS=420675213955956737, key={tableID=94, handle=1} primary={tableID=94, handle=1} [try again later]')
+[SQL: commit;]
+(Background on this error at: http://sqlalche.me/e/13/e3q8)
+--------------------第52/70个组合--------------------
+[script_a.txt]-[start transaction;]
+[script_b.txt]-[start transaction;]
+[script_a.txt]-[select * from t1;]
+[(1101,)]
+[script_a.txt]-[update t1 set id=id+1;]
+[script_b.txt]-[select * from t1;]
+[(1101,)]
+[script_b.txt]-[update t1 set id=id+1;]
+[script_b.txt]-[commit;]
+[script_a.txt]-[commit;]
+(pymysql.err.OperationalError) (9007, 'Write conflict, txnStartTS=420675213969063940, conflictStartTS=420675213995278338, conflictCommitTS=420675214008385537, key={tableID=94, handle=1} primary={tableID=94, handle=1} [try again later]')
+[SQL: commit;]
+(Background on this error at: http://sqlalche.me/e/13/e3q8)
+--------------------第53/70个组合--------------------
+[script_a.txt]-[start transaction;]
+[script_b.txt]-[start transaction;]
+[script_a.txt]-[select * from t1;]
+[(1102,)]
+[script_a.txt]-[update t1 set id=id+1;]
+[script_b.txt]-[select * from t1;]
+[(1102,)]
+[script_b.txt]-[update t1 set id=id+1;]
+[script_a.txt]-[commit;]
+[script_b.txt]-[commit;]
+(pymysql.err.OperationalError) (9007, 'Write conflict, txnStartTS=420675214035648515, conflictStartTS=420675214021492739, conflictCommitTS=420675214047707137, key={tableID=94, handle=1} primary={tableID=94, handle=1} [try again later]')
+[SQL: commit;]
+(Background on this error at: http://sqlalche.me/e/13/e3q8)
+--------------------第54/70个组合--------------------
+[script_a.txt]-[start transaction;]
+[script_b.txt]-[start transaction;]
+[script_a.txt]-[select * from t1;]
+[(1103,)]
+[script_a.txt]-[update t1 set id=id+1;]
+[script_b.txt]-[select * from t1;]
+[(1103,)]
+[script_a.txt]-[commit;]
+[script_b.txt]-[update t1 set id=id+1;]
+[script_b.txt]-[commit;]
+(pymysql.err.OperationalError) (9007, 'Write conflict, txnStartTS=420675214073921540, conflictStartTS=420675214060814341, conflictCommitTS=420675214087028737, key={tableID=94, handle=1} primary={tableID=94, handle=1} [try again later]')
+[SQL: commit;]
+(Background on this error at: http://sqlalche.me/e/13/e3q8)
+--------------------第55/70个组合--------------------
+[script_a.txt]-[start transaction;]
+[script_b.txt]-[start transaction;]
+[script_a.txt]-[select * from t1;]
+[(1104,)]
+[script_a.txt]-[update t1 set id=id+1;]
+[script_a.txt]-[commit;]
+[script_b.txt]-[select * from t1;]
+[(1104,)]
+[script_b.txt]-[update t1 set id=id+1;]
+[script_b.txt]-[commit;]
+(pymysql.err.OperationalError) (9007, 'Write conflict, txnStartTS=420675214126350337, conflictStartTS=420675214100135942, conflictCommitTS=420675214126350338, key={tableID=94, handle=1} primary={tableID=94, handle=1} [try again later]')
+[SQL: commit;]
+(Background on this error at: http://sqlalche.me/e/13/e3q8)
+--------------------第56/70个组合--------------------
+[script_a.txt]-[start transaction;]
+[script_a.txt]-[select * from t1;]
+[(1105,)]
+[script_b.txt]-[start transaction;]
+[script_b.txt]-[select * from t1;]
+[(1105,)]
+[script_b.txt]-[update t1 set id=id+1;]
+[script_b.txt]-[commit;]
+[script_a.txt]-[update t1 set id=id+1;]
+[script_a.txt]-[commit;]
+(pymysql.err.OperationalError) (9007, 'Write conflict, txnStartTS=420675214152564737, conflictStartTS=420675214165671939, conflictCommitTS=420675214165671940, key={tableID=94, handle=1} primary={tableID=94, handle=1} [try again later]')
+[SQL: commit;]
+(Background on this error at: http://sqlalche.me/e/13/e3q8)
+--------------------第57/70个组合--------------------
+[script_a.txt]-[start transaction;]
+[script_a.txt]-[select * from t1;]
+[(1106,)]
+[script_b.txt]-[start transaction;]
+[script_b.txt]-[select * from t1;]
+[(1106,)]
+[script_b.txt]-[update t1 set id=id+1;]
+[script_a.txt]-[update t1 set id=id+1;]
+[script_b.txt]-[commit;]
+[script_a.txt]-[commit;]
+(pymysql.err.OperationalError) (9007, 'Write conflict, txnStartTS=420675214191886338, conflictStartTS=420675214204993539, conflictCommitTS=420675214218100737, key={tableID=94, handle=1} primary={tableID=94, handle=1} [try again later]')
+[SQL: commit;]
+(Background on this error at: http://sqlalche.me/e/13/e3q8)
+--------------------第58/70个组合--------------------
+[script_a.txt]-[start transaction;]
+[script_a.txt]-[select * from t1;]
+[(1107,)]
+[script_b.txt]-[start transaction;]
+[script_b.txt]-[select * from t1;]
+[(1107,)]
+[script_b.txt]-[update t1 set id=id+1;]
+[script_a.txt]-[update t1 set id=id+1;]
+[script_a.txt]-[commit;]
+[script_b.txt]-[commit;]
+(pymysql.err.OperationalError) (9007, 'Write conflict, txnStartTS=420675214270529537, conflictStartTS=420675214244315138, conflictCommitTS=420675214270529538, key={tableID=94, handle=1} primary={tableID=94, handle=1} [try again later]')
+[SQL: commit;]
+(Background on this error at: http://sqlalche.me/e/13/e3q8)
+--------------------第59/70个组合--------------------
+[script_a.txt]-[start transaction;]
+[script_a.txt]-[select * from t1;]
+[(1108,)]
+[script_b.txt]-[start transaction;]
+[script_b.txt]-[select * from t1;]
+[(1108,)]
+[script_a.txt]-[update t1 set id=id+1;]
+[script_b.txt]-[update t1 set id=id+1;]
+[script_b.txt]-[commit;]
+[script_a.txt]-[commit;]
+(pymysql.err.OperationalError) (9007, 'Write conflict, txnStartTS=420675214296743937, conflictStartTS=420675214309851139, conflictCommitTS=420675214322958337, key={tableID=94, handle=1} primary={tableID=94, handle=1} [try again later]')
+[SQL: commit;]
+(Background on this error at: http://sqlalche.me/e/13/e3q8)
+--------------------第60/70个组合--------------------
+[script_a.txt]-[start transaction;]
+[script_a.txt]-[select * from t1;]
+[(1109,)]
+[script_b.txt]-[start transaction;]
+[script_b.txt]-[select * from t1;]
+[(1109,)]
+[script_a.txt]-[update t1 set id=id+1;]
+[script_b.txt]-[update t1 set id=id+1;]
+[script_a.txt]-[commit;]
+[script_b.txt]-[commit;]
+(pymysql.err.OperationalError) (9007, 'Write conflict, txnStartTS=420675214349172740, conflictStartTS=420675214336065538, conflictCommitTS=420675214362279937, key={tableID=94, handle=1} primary={tableID=94, handle=1} [try again later]')
+[SQL: commit;]
+(Background on this error at: http://sqlalche.me/e/13/e3q8)
+--------------------第61/70个组合--------------------
+[script_a.txt]-[start transaction;]
+[script_a.txt]-[select * from t1;]
+[(1110,)]
+[script_b.txt]-[start transaction;]
+[script_b.txt]-[select * from t1;]
+[(1110,)]
+[script_a.txt]-[update t1 set id=id+1;]
+[script_a.txt]-[commit;]
+[script_b.txt]-[update t1 set id=id+1;]
+[script_b.txt]-[commit;]
+(pymysql.err.OperationalError) (9007, 'Write conflict, txnStartTS=420675214388494340, conflictStartTS=420675214375387139, conflictCommitTS=420675214401601538, key={tableID=94, handle=1} primary={tableID=94, handle=1} [try again later]')
+[SQL: commit;]
+(Background on this error at: http://sqlalche.me/e/13/e3q8)
+--------------------第62/70个组合--------------------
+[script_a.txt]-[start transaction;]
+[script_a.txt]-[select * from t1;]
+[(1111,)]
+[script_b.txt]-[start transaction;]
+[script_a.txt]-[update t1 set id=id+1;]
+[script_b.txt]-[select * from t1;]
+[(1111,)]
+[script_b.txt]-[update t1 set id=id+1;]
+[script_b.txt]-[commit;]
+[script_a.txt]-[commit;]
+(pymysql.err.OperationalError) (9007, 'Write conflict, txnStartTS=420675214414708742, conflictStartTS=420675214440923138, conflictCommitTS=420675214440923141, key={tableID=94, handle=1} primary={tableID=94, handle=1} [try again later]')
+[SQL: commit;]
+(Background on this error at: http://sqlalche.me/e/13/e3q8)
+--------------------第63/70个组合--------------------
+[script_a.txt]-[start transaction;]
+[script_a.txt]-[select * from t1;]
+[(1112,)]
+[script_b.txt]-[start transaction;]
+[script_a.txt]-[update t1 set id=id+1;]
+[script_b.txt]-[select * from t1;]
+[(1112,)]
+[script_b.txt]-[update t1 set id=id+1;]
+[script_a.txt]-[commit;]
+[script_b.txt]-[commit;]
+(pymysql.err.OperationalError) (9007, 'Write conflict, txnStartTS=420675214493351939, conflictStartTS=420675214467137537, conflictCommitTS=420675214506459137, key={tableID=94, handle=1} primary={tableID=94, handle=1} [try again later]')
+[SQL: commit;]
+(Background on this error at: http://sqlalche.me/e/13/e3q8)
+--------------------第64/70个组合--------------------
+[script_a.txt]-[start transaction;]
+[script_a.txt]-[select * from t1;]
+[(1113,)]
+[script_b.txt]-[start transaction;]
+[script_a.txt]-[update t1 set id=id+1;]
+[script_b.txt]-[select * from t1;]
+[(1113,)]
+[script_a.txt]-[commit;]
+[script_b.txt]-[update t1 set id=id+1;]
+[script_b.txt]-[commit;]
+(pymysql.err.OperationalError) (9007, 'Write conflict, txnStartTS=420675214545780741, conflictStartTS=420675214532673539, conflictCommitTS=420675214558887937, key={tableID=94, handle=1} primary={tableID=94, handle=1} [try again later]')
+[SQL: commit;]
+(Background on this error at: http://sqlalche.me/e/13/e3q8)
+--------------------第65/70个组合--------------------
+[script_a.txt]-[start transaction;]
+[script_a.txt]-[select * from t1;]
+[(1114,)]
+[script_b.txt]-[start transaction;]
+[script_a.txt]-[update t1 set id=id+1;]
+[script_a.txt]-[commit;]
+[script_b.txt]-[select * from t1;]
+[(1114,)]
+[script_b.txt]-[update t1 set id=id+1;]
+[script_b.txt]-[commit;]
+(pymysql.err.OperationalError) (9007, 'Write conflict, txnStartTS=420675214598209537, conflictStartTS=420675214571995141, conflictCommitTS=420675214598209538, key={tableID=94, handle=1} primary={tableID=94, handle=1} [try again later]')
+[SQL: commit;]
+(Background on this error at: http://sqlalche.me/e/13/e3q8)
+--------------------第66/70个组合--------------------
+[script_a.txt]-[start transaction;]
+[script_a.txt]-[select * from t1;]
+[(1115,)]
+[script_a.txt]-[update t1 set id=id+1;]
+[script_b.txt]-[start transaction;]
+[script_b.txt]-[select * from t1;]
+[(1115,)]
+[script_b.txt]-[update t1 set id=id+1;]
+[script_b.txt]-[commit;]
+[script_a.txt]-[commit;]
+(pymysql.err.OperationalError) (9007, 'Write conflict, txnStartTS=420675214624423937, conflictStartTS=420675214637531140, conflictCommitTS=420675214650638337, key={tableID=94, handle=1} primary={tableID=94, handle=1} [try again later]')
+[SQL: commit;]
+(Background on this error at: http://sqlalche.me/e/13/e3q8)
+--------------------第67/70个组合--------------------
+[script_a.txt]-[start transaction;]
+[script_a.txt]-[select * from t1;]
+[(1116,)]
+[script_a.txt]-[update t1 set id=id+1;]
+[script_b.txt]-[start transaction;]
+[script_b.txt]-[select * from t1;]
+[(1116,)]
+[script_b.txt]-[update t1 set id=id+1;]
+[script_a.txt]-[commit;]
+[script_b.txt]-[commit;]
+(pymysql.err.OperationalError) (9007, 'Write conflict, txnStartTS=420675214689959937, conflictStartTS=420675214663745540, conflictCommitTS=420675214689959939, key={tableID=94, handle=1} primary={tableID=94, handle=1} [try again later]')
+[SQL: commit;]
+(Background on this error at: http://sqlalche.me/e/13/e3q8)
+--------------------第68/70个组合--------------------
+[script_a.txt]-[start transaction;]
+[script_a.txt]-[select * from t1;]
+[(1117,)]
+[script_a.txt]-[update t1 set id=id+1;]
+[script_b.txt]-[start transaction;]
+[script_b.txt]-[select * from t1;]
+[(1117,)]
+[script_a.txt]-[commit;]
+[script_b.txt]-[update t1 set id=id+1;]
+[script_b.txt]-[commit;]
+(pymysql.err.OperationalError) (9007, 'Write conflict, txnStartTS=420675214729543683, conflictStartTS=420675214703067141, conflictCommitTS=420675214729543684, key={tableID=94, handle=1} primary={tableID=94, handle=1} [try again later]')
+[SQL: commit;]
+(Background on this error at: http://sqlalche.me/e/13/e3q8)
+--------------------第69/70个组合--------------------
+[script_a.txt]-[start transaction;]
+[script_a.txt]-[select * from t1;]
+[(1118,)]
+[script_a.txt]-[update t1 set id=id+1;]
+[script_b.txt]-[start transaction;]
+[script_a.txt]-[commit;]
+[script_b.txt]-[select * from t1;]
+[(1118,)]
+[script_b.txt]-[update t1 set id=id+1;]
+[script_b.txt]-[commit;]
+(pymysql.err.OperationalError) (9007, 'Write conflict, txnStartTS=420675214781710339, conflictStartTS=420675214755495938, conflictCommitTS=420675214781710340, key={tableID=94, handle=1} primary={tableID=94, handle=1} [try again later]')
+[SQL: commit;]
+(Background on this error at: http://sqlalche.me/e/13/e3q8)
+--------------------第70/70个组合--------------------
+[script_a.txt]-[start transaction;]
+[script_a.txt]-[select * from t1;]
+[(1119,)]
+[script_a.txt]-[update t1 set id=id+1;]
+[script_a.txt]-[commit;]
+[script_b.txt]-[start transaction;]
+[script_b.txt]-[select * from t1;]
+[(1120,)]
+[script_b.txt]-[update t1 set id=id+1;]
+[script_b.txt]-[commit;]

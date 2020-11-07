@@ -1,0 +1,6 @@
+start transaction;
+select * from t1;
+update t1 set id=id+1;
+commit;
+update t1 set id=id+1;
+

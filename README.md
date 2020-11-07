@@ -4,6 +4,14 @@
 
 模拟多个客户端乱序向 TiDB 执行 SQL 语句。
 
+## 模拟结果
+
+见 examples 里两个例子。
+
+`output_optimistic.txt` 是乐观锁下的模拟过程。
+
+`output_pessimistic.txt` 是悲观锁下的模拟过程。
+
 
 ## 使用
 
@@ -32,7 +40,7 @@ pipenv run pytest --cov sql_simulation tests
 * 为了方便查看结果，如果是 select 语句，会打印输出，如果有 error 也会打印输出。
 * 简单处理，一行记录是一个 statement，如果 'update t2 set id=id+1;select * from t2' 这种语句，没有 select 的输出。
 
-## TiDB 事务说明
+## TiDB 事务简单说明
 
 ### 悲观锁
 
@@ -60,7 +68,7 @@ pipenv run pytest --cov sql_simulation tests
 ```
 
 ```
-# commit 后 a 在 update，不会报错，结果为 2662
+# commit b 后， a 在 update，不会报错，结果为 2662
 [script_b.txt]-[start transaction;]
 [script_b.txt]-[select * from t1;]
 [(2660,)]
@@ -71,6 +79,24 @@ pipenv run pytest --cov sql_simulation tests
 [script_b.txt]-[commit;]
 [script_a.txt]-[update t1 set id=id+1;]
 [script_a.txt]-[commit;]
+```
+
+```
+[script_b.txt]-[start transaction;]
+[script_a.txt]-[start transaction;]
+[script_a.txt]-[select * from t1;]
+[(159,)]
+[script_b.txt]-[select * from t1;]
+[(159,)]
+[script_a.txt]-[update t1 set id=id+1;]
+[script_a.txt]-[commit;]
+[script_b.txt]-[update t1 set id=id+1;]
+[script_a.txt]-[update t1 set id=id+1;]
+(pymysql.err.OperationalError) (1205, 'Lock wait timeout exceeded; try restarting transaction')
+[SQL: update t1 set id=id+1;]
+(Background on this error at: http://sqlalche.me/e/13/e3q8)
+[script_b.txt]-[commit;]
+
 ```
 
 ### 乐观锁

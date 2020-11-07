@@ -19,7 +19,7 @@ pipenv run python cli.py data/script_a.txt data/script_b.txt -o output.log
 
 # 执行过程及结果，在输出的 output.log 里
 
-# 测试
+# 测试代码
 pipenv run pytest --cov sql_simulation tests
 
 ```
@@ -28,7 +28,7 @@ pipenv run pytest --cov sql_simulation tests
 
 * 因为是所有组合全排列，如果 SQL 文件过多或语句比较多时，会比较慢。
 * 一个 SQL 文件用一个 session，为了方便查看，记录中标记了文件名来区分不同的 session。
-* 悲观锁下，如果产生了行锁，导致执行时间较长，建议设置超时时间为较短的值。如：set @@innodb_lock_wait_timeout=2;
+* 悲观锁下，如果产生了行锁，导致执行时间较长，建议设置超时时间为较短的值。如：`set @@innodb_lock_wait_timeout=2;`
 * 为了方便查看结果，如果是 select 语句，会打印输出，如果有 error 也会打印输出。
 * 简单处理，一行记录是一个 statement，如果 'update t2 set id=id+1;select * from t2' 这种语句，没有 select 的输出。
 

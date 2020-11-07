@@ -4,6 +4,49 @@
 
 模拟多个客户端乱序向 TiDB 执行 SQL 语句。
 
+以两个客户端的情况为例。首先启动两个 TiDB 客户端，客户端分别读取对应的 SQL 文件后，以交错顺序执行 SQL 文件中的语句。要求穷举所有执行顺序。
+
+给定 sql1.txt、sql2.txt, 内容如下：
+
+```
+# cat sql1.txt
+update X set a=5 where id=1;
+update X set a=6 where id=2;
+```
+
+```
+# cat sql2.txt
+update X set a=8 where id=8
+```
+
+启动客户端 client1 读取 sql1.txt、client2 读取 sql2.txt。
+
+对这个 case，穷举所有可能，意味着执行顺序必须包含以下三种情况：
+
+情况 1：
+
+```
+client1：update X set a=5 where id=1;
+client1：update X set a=6 where id=2;
+client2：update X set a=8 where id=8;
+```
+
+情况 2：
+
+```
+client1：update X set a=5 where id=1;
+client2：update X set a=8 where id=8;
+client1：update X set a=6 where id=2;
+```
+
+情况 3：
+
+```
+client2：update X set a=8 where id=8;
+client1：update X set a=5 where id=1;
+client1：update X set a=6 where id=2;
+```
+
 ## 模拟结果
 
 见 examples 里两个例子。
